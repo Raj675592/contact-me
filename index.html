@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form with Validation</title>
+    <link rel="stylesheet" href="styles.css">
+   
+</head>
+<body>
+    <div class="form-container">
+        <h1 class="form-title">Contact Us</h1>
+        
+        <form id="contactForm" novalidate>
+            <div class="form-group">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name">
+                <div class="error-message" id="nameError">
+                    <span class="error-icon">⚠</span>
+                    <span class="error-text"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email address">
+                <div class="error-message" id="emailError">
+                    <span class="error-icon">⚠</span>
+                    <span class="error-text"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" name="message" class="form-input" placeholder="Enter your message here..." maxlength="1000"></textarea>
+                <div class="char-counter" id="charCounter">0 / 1000 characters</div>
+                <div class="error-message" id="messageError">
+                    <span class="error-icon">⚠</span>
+                    <span class="error-text"></span>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+                <span class="loading-spinner" id="loadingSpinner">⟳</span>
+                <span id="btnText">Send Message</span>
+            </button>
+        </form>
+
+        <div class="success-message" id="successMessage">
+            <div class="success-icon">✅</div>
+            <h3>Message Sent Successfully!</h3>
+            <p>Thank you for contacting us. We'll get back to you soon.</p>
+        </div>
+
+        <div class="form-stats" id="formStats" style="display: none;">
+            <strong>Validation Summary:</strong><br>
+            <span id="statsContent"></span>
+        </div>
+    </div>
+
+   <script src="script.js"></script>
+</body>
+</html>
